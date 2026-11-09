@@ -1,0 +1,4 @@
+/target/
+/.internal/
+/.serena/
+__pycache__/

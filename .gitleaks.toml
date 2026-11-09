@@ -1,0 +1,12 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Intentional secret-like test data only"
+paths = [
+    '''(^|/)tests/cli\.rs$''',
+    '''(^|/)tests/mutation_secrets\.rs$''',
+    '''(^|/)tests/secret_hardening\.rs$''',
+    '''(^|/)tests/sarif_rules\.rs$''',
+    '''(^|/)src/rules/secrets\.rs$''',
+]

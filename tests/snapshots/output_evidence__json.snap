@@ -1,0 +1,42 @@
+---
+source: tests/output_evidence.rs
+expression: "serde_json::from_str::<serde_json::Value>(&normalize(&json)).unwrap()"
+---
+{
+  "diagnostics": [
+    {
+      "column": 1,
+      "line": 3,
+      "message": "empty section",
+      "path": "AGENTS.md",
+      "rule_id": "KS008",
+      "severity": "info"
+    },
+    {
+      "column": 1,
+      "line": 3,
+      "message": "heading level skipped",
+      "path": "AGENTS.md",
+      "rule_id": "KS008",
+      "severity": "warn"
+    },
+    {
+      "column": 1,
+      "line": 5,
+      "message": "empty section",
+      "path": "AGENTS.md",
+      "rule_id": "KS008",
+      "severity": "info"
+    }
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "score": 93,
+      "tokens": 11
+    }
+  ],
+  "schema": "kanso/v1",
+  "score": 93,
+  "total_tokens": 11
+}

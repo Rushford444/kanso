@@ -1,0 +1,46 @@
+[package]
+name = "kdw-kanso"
+version = "0.1.0"
+authors = ["Kodawari <contact@kodawaristudio.fr>"]
+repository = "https://github.com/Rushford444/kanso"
+homepage = "https://kodawaristudio.fr"
+edition = "2024"
+rust-version = "1.88.0"
+description = "Lint instruction files for AI coding agents"
+license = "MIT"
+readme = "README.md"
+keywords = ["lint", "agents", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+exclude = [".internal/**", "STATUS-*", "ARRET-*", "DELIVERY-READY-*", "docs/HANDOFF-*", "docs/ARRET-*", "docs/DELIVERY-READY-*", "docs/VERIFICATION*", "docs/MUTATION-*", "docs/PACKAGING-FINAL.md", "docs/GATES-EVIDENCE.md", "docs/IMPLEMENTATION-PLAN.md", "**/[sS][tT][aA][tT][uU][sS]-*", "**/[hH][aA][nN][dD][oO][fF][fF]*", "**/[aA][rR][rR][eE][tT]*", "**/.[iI][nN][tT][eE][rR][nN][aA][lL]/**"]
+
+[lib]
+name = "kanso"
+
+[[bin]]
+name = "kanso"
+path = "src/main.rs"
+
+[profile.release]
+strip = true
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+ignore = "0.4"
+pulldown-cmark = "0.13"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde-saphyr = "0.0.21"
+thiserror = "2"
+tiktoken-rs = "0.7"
+toml = "0.8"
+tempfile = "3"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+insta = { version = "1", features = ["json"] }
+jsonschema = { version = "0.30", default-features = false }
+proptest = "1"

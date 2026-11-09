@@ -1,0 +1,8 @@
+# Kanso defaults; uncomment values to customize this project.
+# token_warn = 2000
+# token_error = 6000
+# total_token_warn = 10000
+# total_token_error = 20000
+# similarity_threshold = 0.85
+# disabled_rules = []
+ignore = ["tests/fixtures/**"]

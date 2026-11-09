@@ -1,0 +1,3 @@
+# Credentials
+
+Example token: ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890

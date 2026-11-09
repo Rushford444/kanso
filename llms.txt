@@ -1,0 +1,17 @@
+# Kanso
+
+> Offline linter for coding-agent instruction files.
+
+Kanso reports structure, links, duplicate instructions, secrets, token budgets and commands. It never executes commands found in files.
+
+## Documentation
+
+- [English README](README.md): installation and quick start.
+- [README en français](README.fr.md) : installation et démarrage.
+- [Usage](docs/usage.md): commands, output and exit codes.
+- [Configuration](docs/configuration.md): settings and defaults.
+- [Guide d'utilisation](docs/fr/usage.md): commandes et sorties en français.
+- [Configuration en français](docs/fr/configuration.md): paramètres et valeurs par défaut.
+- [Agent skill](SKILL.md): reusable agent instructions.
+- [Contributing](CONTRIBUTING.md): development checks.
+- [Security](SECURITY.md): private reporting and limitations.

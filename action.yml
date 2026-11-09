@@ -1,0 +1,25 @@
+name: Kanso check
+description: Check agent instruction files offline
+inputs:
+  path:
+    description: File or directory to check
+    required: false
+    default: .
+  format:
+    description: Output format (human or sarif)
+    required: false
+    default: human
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        KANSO_CHECK_PATH: ${{ inputs.path }}
+        KANSO_ACTION_PATH: ${{ github.action_path }}
+        KANSO_FORMAT: ${{ inputs.format }}
+      run: |
+        case "$KANSO_FORMAT" in
+          human) cargo run --locked --manifest-path "$KANSO_ACTION_PATH/Cargo.toml" -- check "$KANSO_CHECK_PATH" ;;
+          sarif) cargo run --locked --manifest-path "$KANSO_ACTION_PATH/Cargo.toml" -- check "$KANSO_CHECK_PATH" --format sarif ;;
+          *) echo "Unsupported format" >&2; exit 2 ;;
+        esac

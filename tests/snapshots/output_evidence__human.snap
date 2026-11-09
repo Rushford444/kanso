@@ -1,0 +1,8 @@
+---
+source: tests/output_evidence.rs
+expression: normalize(&text)
+---
+AGENTS.md:3:1: info KS008: empty section
+AGENTS.md:3:1: warning KS008: heading level skipped
+AGENTS.md:5:1: info KS008: empty section
+Score: 93 / 100 (11 tokens)
